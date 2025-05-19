@@ -1,0 +1,14 @@
+C:\Users\corre\OneDrive\Documentos\trabajos_universidad\logica_de_programcion\tiendaApp\bin\Debug\net9.0\TiendaApp.exe
+C:\Users\corre\OneDrive\Documentos\trabajos_universidad\logica_de_programcion\tiendaApp\bin\Debug\net9.0\TiendaApp.deps.json
+C:\Users\corre\OneDrive\Documentos\trabajos_universidad\logica_de_programcion\tiendaApp\bin\Debug\net9.0\TiendaApp.runtimeconfig.json
+C:\Users\corre\OneDrive\Documentos\trabajos_universidad\logica_de_programcion\tiendaApp\bin\Debug\net9.0\TiendaApp.dll
+C:\Users\corre\OneDrive\Documentos\trabajos_universidad\logica_de_programcion\tiendaApp\bin\Debug\net9.0\TiendaApp.pdb
+C:\Users\corre\OneDrive\Documentos\trabajos_universidad\logica_de_programcion\tiendaApp\obj\Debug\net9.0\TiendaApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\corre\OneDrive\Documentos\trabajos_universidad\logica_de_programcion\tiendaApp\obj\Debug\net9.0\TiendaApp.AssemblyInfoInputs.cache
+C:\Users\corre\OneDrive\Documentos\trabajos_universidad\logica_de_programcion\tiendaApp\obj\Debug\net9.0\TiendaApp.AssemblyInfo.cs
+C:\Users\corre\OneDrive\Documentos\trabajos_universidad\logica_de_programcion\tiendaApp\obj\Debug\net9.0\TiendaApp.csproj.CoreCompileInputs.cache
+C:\Users\corre\OneDrive\Documentos\trabajos_universidad\logica_de_programcion\tiendaApp\obj\Debug\net9.0\TiendaApp.dll
+C:\Users\corre\OneDrive\Documentos\trabajos_universidad\logica_de_programcion\tiendaApp\obj\Debug\net9.0\refint\TiendaApp.dll
+C:\Users\corre\OneDrive\Documentos\trabajos_universidad\logica_de_programcion\tiendaApp\obj\Debug\net9.0\TiendaApp.pdb
+C:\Users\corre\OneDrive\Documentos\trabajos_universidad\logica_de_programcion\tiendaApp\obj\Debug\net9.0\TiendaApp.genruntimeconfig.cache
+C:\Users\corre\OneDrive\Documentos\trabajos_universidad\logica_de_programcion\tiendaApp\obj\Debug\net9.0\ref\TiendaApp.dll
