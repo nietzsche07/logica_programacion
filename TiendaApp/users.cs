@@ -8,6 +8,7 @@ public class User
 
     public User()
     {
+        Console.WriteLine($"\n=== BIENVENIDOS MODULO USUARIOS ===");
         for (int i = 0; i < 5; i++)
         {
             Console.WriteLine($"\n=== INGRESAR USUARIO {i + 1} ===");

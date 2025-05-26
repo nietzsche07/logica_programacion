@@ -42,6 +42,7 @@ public class Sale
 
     private void IngresarInformacionArticulos()
     {
+        Console.WriteLine("\n=== BIENVENIDO MODULO VENTAS ===");
         Console.WriteLine("=== INGRESO DE ARTÍCULOS PARA VENTA ===");
         for (int i = 0; i < 5; i++)
         {

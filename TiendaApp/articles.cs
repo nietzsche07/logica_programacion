@@ -7,7 +7,9 @@ public class Article
     private List<string> preciosArticulos = new List<string>();
 
     public Article()
+    
     {
+        Console.WriteLine("\n==== BIENVENIDOS AL MODULO DE ARTÍCULOS ===");
         Console.WriteLine("=== INGRESO INICIAL DE 5 ARTÍCULOS ===");
         for (int i = 0; i < 5; i++)
         {
