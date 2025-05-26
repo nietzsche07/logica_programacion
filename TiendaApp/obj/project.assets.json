@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\corre\\OneDrive\\Documentos\\trabajos_universidad\\logica_de_programcion\\TiendaApp\\TiendaApp.csproj",
+      "projectUniqueName": "C:\\Users\\corre\\OneDrive\\Documentos\\trabajos_universidad\\logica_de_programcion\\logica_programacion\\TiendaApp\\TiendaApp.csproj",
       "projectName": "TiendaApp",
-      "projectPath": "C:\\Users\\corre\\OneDrive\\Documentos\\trabajos_universidad\\logica_de_programcion\\TiendaApp\\TiendaApp.csproj",
+      "projectPath": "C:\\Users\\corre\\OneDrive\\Documentos\\trabajos_universidad\\logica_de_programcion\\logica_programacion\\TiendaApp\\TiendaApp.csproj",
       "packagesPath": "C:\\Users\\corre\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\corre\\OneDrive\\Documentos\\trabajos_universidad\\logica_de_programcion\\TiendaApp\\obj\\",
+      "outputPath": "C:\\Users\\corre\\OneDrive\\Documentos\\trabajos_universidad\\logica_de_programcion\\logica_programacion\\TiendaApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\corre\\AppData\\Roaming\\NuGet\\NuGet.Config"
