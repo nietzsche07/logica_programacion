@@ -2,19 +2,30 @@ public class Login
 {
     public bool LoginUser()
     {
+        string usuarioPorDefecto = "admin";
+        string passwordPorDefecto = "admin123";
+        string usuario;
+        string password;
+
         Console.WriteLine("=== SISTEMA DE GESTIÓN DE TIENDA ===");
-        Console.Write("Ingrese usuario: ");
-        string usuario = Console.ReadLine();
-        Console.Write("Ingrese contraseña: ");
-        string password = Console.ReadLine();
-        if (usuario == "admin" && password == "admin123")
+
+        while (true)
         {
-              Console.WriteLine("\n¡Inicio de sesión exitoso!");
-            return true;
-        }else
-        {
-            Console.WriteLine("\nUsuario o contraseña incorrectos.");
-            return false;
+            Console.Write("Ingrese usuario: ");
+            usuario = Console.ReadLine();
+
+            Console.Write("Ingrese contraseña: ");
+            password = Console.ReadLine();
+
+            if (usuario == usuarioPorDefecto && password == passwordPorDefecto)
+            {
+                Console.WriteLine("\n¡Bienvenido!");
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("\nUsuario o contraseña incorrectos. Intente de nuevo.\n");
+            }
         }
     }
 }
