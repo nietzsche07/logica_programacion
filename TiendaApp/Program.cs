@@ -10,7 +10,7 @@
             bool continuar = true;
             while (continuar)
             {
-                Console.WriteLine("\n=== MENÚ PRINCIPAL ===");
+                Console.WriteLine("\n=== BIENVENIDO AL MENÚ PRINCIPAL ===");
                 Console.WriteLine("1. Gestión de usuarios");
                 Console.WriteLine("2. Gestión de artículos");
                 Console.WriteLine("3. Gestión de ventas");

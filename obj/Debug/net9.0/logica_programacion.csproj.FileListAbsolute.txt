@@ -1,0 +1,5 @@
+C:\Users\corre\OneDrive\Documentos\trabajos_universidad\logica_de_programcion\logica_programacion\obj\Debug\net9.0\logica_programacion.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\corre\OneDrive\Documentos\trabajos_universidad\logica_de_programcion\logica_programacion\obj\Debug\net9.0\logica_programacion.AssemblyInfoInputs.cache
+C:\Users\corre\OneDrive\Documentos\trabajos_universidad\logica_de_programcion\logica_programacion\obj\Debug\net9.0\logica_programacion.AssemblyInfo.cs
+C:\Users\corre\OneDrive\Documentos\trabajos_universidad\logica_de_programcion\logica_programacion\obj\Debug\net9.0\logica_programacion.csproj.CoreCompileInputs.cache
+C:\Users\corre\OneDrive\Documentos\trabajos_universidad\logica_de_programcion\logica_programacion\obj\Debug\net9.0\logica_programacion.sourcelink.json
