@@ -6,19 +6,56 @@ public class User
     private int totalUsuarios = 0; 
 
     public User()
+{
+    Console.WriteLine("\n=== BIENVENIDOS MODULO USUARIOS ===");
+    
+    for (int i = 0; i < 5; i++)
     {
-        Console.WriteLine("\n=== BIENVENIDOS MODULO USUARIOS ===");
+        Console.WriteLine($"\n=== INGRESAR USUARIO {i + 1} ===");
         
-        for (int i = 0; i < 5; i++)
+        string cedula;
+        bool cedulaExiste;
+        do
         {
-            Console.WriteLine($"\n=== INGRESAR USUARIO {i + 1} ===");
+            cedulaExiste = false;
             Console.Write("Número de cédula: ");
-            matrizUsuarios[0, i] = Console.ReadLine(); 
+            cedula = Console.ReadLine();
+            
+            for (int j = 0; j < i; j++)
+            {
+                if (matrizUsuarios[0, j] == cedula)
+                {
+                    cedulaExiste = true;
+                    Console.WriteLine("Error: Ya existe un usuario con esa cédula.");
+                    break;
+                }
+            }
+        } while (cedulaExiste);
+        
+        string nombre;
+        bool nombreExiste;
+        do
+        {
+            nombreExiste = false;
             Console.Write("Nombre completo: ");
-            matrizUsuarios[1, i] = Console.ReadLine(); 
-        }
-        totalUsuarios = 5; 
+            nombre = Console.ReadLine();
+            
+            for (int j = 0; j < i; j++)
+            {
+                if (matrizUsuarios[1, j] == nombre)
+                {
+                    nombreExiste = true;
+                    Console.WriteLine("Error: Ya existe un usuario con ese nombre.");
+                    break;
+                }
+            }
+        } while (nombreExiste);
+        
+        matrizUsuarios[0, i] = cedula; 
+        matrizUsuarios[1, i] = nombre; 
     }
+    totalUsuarios = 5; 
+}
 
     public void ManageUsers()
     {
