@@ -1,22 +1,23 @@
 using System;
-using System.Collections.Generic;
 
 public class User
 {
-    private List<string> nombres = new List<string>();
-    private List<string> cedulas = new List<string>();
+    private string[,] matrizUsuarios = new string[2, 10];
+    private int totalUsuarios = 0; 
 
     public User()
     {
-        Console.WriteLine($"\n=== BIENVENIDOS MODULO USUARIOS ===");
+        Console.WriteLine("\n=== BIENVENIDOS MODULO USUARIOS ===");
+        
         for (int i = 0; i < 5; i++)
         {
             Console.WriteLine($"\n=== INGRESAR USUARIO {i + 1} ===");
-            Console.Write("Nombre completo: ");
-            nombres.Add(Console.ReadLine());
             Console.Write("Número de cédula: ");
-            cedulas.Add(Console.ReadLine());
+            matrizUsuarios[0, i] = Console.ReadLine(); 
+            Console.Write("Nombre completo: ");
+            matrizUsuarios[1, i] = Console.ReadLine(); 
         }
+        totalUsuarios = 5; 
     }
 
     public void ManageUsers()
@@ -30,115 +31,208 @@ public class User
             Console.WriteLine("2. Nuevo usuario");
             Console.WriteLine("3. Editar información de usuario");
             Console.WriteLine("4. Salir de Gestión de usuarios");
-            Console.Write("Seleccione una opción: ");
-            string opcion = Console.ReadLine();
-
-            switch (opcion)
+            
+            string opcion;
+            bool opcionValida = false;
+            
+            while (!opcionValida)
             {
-                case "1":
-                    VerListaUsuarios();
-                    break;
-                case "2":
-                    CrearUsuario();
-                    break;
-                case "3":
-                    EditarUsuario();
-                    break;
-                case "4":
-                    salir = true;
-                    Console.WriteLine("Saliendo del módulo de Gestión de Usuarios...");
-                    break;
-                default:
-                    Console.WriteLine("Ingrese una opción del menú válida.");
-                    break;
+                Console.Write("Seleccione una opción: ");
+                opcion = Console.ReadLine();
+                
+                switch (opcion)
+                {
+                    case "1":
+                        VerListaUsuarios();
+                        opcionValida = true;
+                        break;
+                    case "2":
+                        CrearUsuario();
+                        opcionValida = true;
+                        break;
+                    case "3":
+                        EditarUsuario();
+                        opcionValida = true;
+                        break;
+                    case "4":
+                        salir = true;
+                        opcionValida = true;
+                        Console.WriteLine("Regresando al Menú Principal...");
+                        break;
+                    default:
+                        Console.WriteLine("Ingrese una opción del menú válida");
+                        break;
+                }
             }
         }
     }
 
     private void VerListaUsuarios()
     {
-        while (true)
+        bool salir = false;
+        
+        while (!salir)
         {
-            Console.WriteLine("\n=== LISTA DE USUARIOS ===");
-            for (int i = 0; i < cedulas.Count; i++)
+            Console.WriteLine($"\nLista de usuarios (Total: {totalUsuarios}):");
+            
+            for (int i = 0; i < totalUsuarios; i++)
             {
-                Console.WriteLine($"{i + 1}. {nombres[i]}");
+                Console.WriteLine($"{i + 1}. {matrizUsuarios[0, i]}");
             }
-
-            Console.Write("Seleccione un número (1 al {0}) o 0 para volver: ", cedulas.Count);
-            string input = Console.ReadLine();
-            if (int.TryParse(input, out int seleccion) && seleccion >= 0 && seleccion <= cedulas.Count)
+            
+            if (totalUsuarios == 0)
             {
-                if (seleccion == 0) return;
-
-                Console.WriteLine($"\nUsuario {seleccion}:");
-                Console.WriteLine($"Nombre: {nombres[seleccion - 1]}");
-                Console.WriteLine($"Cédula: {cedulas[seleccion - 1]}\n");
+                Console.WriteLine("No hay usuarios registrados.");
+                return;
             }
-            else
+            
+            string opcion;
+            bool opcionValida = false;
+            
+            while (!opcionValida)
             {
-                Console.WriteLine("Ingrese una opción del menú válida.");
+                Console.Write($"Seleccione una opción (1-{totalUsuarios}) o 0 para volver: ");
+                opcion = Console.ReadLine();
+                
+                if (opcion == "0")
+                {
+                    salir = true;
+                    opcionValida = true;
+                }
+                else if (int.TryParse(opcion, out int numeroOpcion) && numeroOpcion >= 1 && numeroOpcion <= totalUsuarios)
+                {
+                    int indice = numeroOpcion - 1;
+                    Console.WriteLine($"\nInformación del usuario {numeroOpcion}:");
+                    Console.WriteLine($"Cédula: {matrizUsuarios[0, indice]}");
+                    Console.WriteLine($"Nombre: {matrizUsuarios[1, indice]}\n");
+                    opcionValida = true;
+                }
+                else
+                {
+                    Console.WriteLine("Ingrese una opción del menú válida");
+                }
             }
         }
     }
 
     private void CrearUsuario()
     {
-        while (true)
+        bool salir = false;
+        
+        while (!salir)
         {
             Console.WriteLine("\n=== MENÚ NUEVO USUARIO ===");
-            Console.WriteLine("1. Crear Usuario");
+            Console.WriteLine("1. Crear nuevo usuario");
             Console.WriteLine("2. Salir");
-            Console.Write("Seleccione una opción: ");
-            string opcion = Console.ReadLine();
-
-            if (opcion == "1")
+            
+            string opcion;
+            bool opcionValida = false;
+            
+            while (!opcionValida)
             {
-                Console.Write("Nombre del nuevo usuario: ");
-                nombres.Add(Console.ReadLine());
-                Console.Write("Cédula del nuevo usuario: ");
-                cedulas.Add(Console.ReadLine());
-                Console.WriteLine("¡Nuevo usuario agregado exitosamente!");
-            }
-            else if (opcion == "2")
-            {
-                return;
-            }
-            else
-            {
-                Console.WriteLine("Ingrese una opción del menú válida.");
+                Console.Write("Seleccione una opción: ");
+                opcion = Console.ReadLine();
+                
+                switch (opcion)
+                {
+                    case "1":
+                        if (totalUsuarios < 10) 
+                        {
+                            Console.Write("Número de cédula: ");
+                            string nuevaCedula = Console.ReadLine();
+                            
+                            bool cedulaExiste = false;
+                            for (int i = 0; i < totalUsuarios; i++)
+                            {
+                                if (matrizUsuarios[0, i] == nuevaCedula)
+                                {
+                                    cedulaExiste = true;
+                                    break;
+                                }
+                            }
+                            
+                            if (cedulaExiste)
+                            {
+                                Console.WriteLine("Error: Ya existe un usuario con esa cédula.");
+                            }
+                            else
+                            {
+                                matrizUsuarios[0, totalUsuarios] = nuevaCedula;
+                                Console.Write("Nombre completo: ");
+                                matrizUsuarios[1, totalUsuarios] = Console.ReadLine();
+                                totalUsuarios++;
+                                Console.WriteLine("¡Nuevo usuario agregado exitosamente!");
+                                
+                                if (totalUsuarios == 10)
+                                {
+                                    Console.WriteLine("Se ha alcanzado el límite máximo de 10 usuarios.");
+                                }
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("No se pueden crear más usuarios. Límite alcanzado (10 usuarios).");
+                        }
+                        opcionValida = true;
+                        break;
+                        
+                    case "2":
+                        salir = true;
+                        opcionValida = true;
+                        break;
+                        
+                    default:
+                        Console.WriteLine("Ingrese una opción del menú válida");
+                        break;
+                }
             }
         }
     }
 
     private void EditarUsuario()
     {
-        while (true)
+        Console.WriteLine("\n=== EDITAR INFORMACIÓN DE USUARIO ===");
+        
+        if (totalUsuarios == 0)
         {
-            Console.WriteLine("\n=== EDITAR USUARIO ===");
-            for (int i = 0; i < cedulas.Count; i++)
+            Console.WriteLine("No hay usuarios registrados para editar.");
+            return;
+        }
+        
+        Console.Write("Ingrese el número de cédula a buscar: ");
+        string cedulaIngresada = Console.ReadLine();
+        
+        bool usuarioEncontrado = false;
+        
+        for (int i = 0; i < totalUsuarios; i++)
+        {
+            if (matrizUsuarios[0, i] == cedulaIngresada)
             {
-                Console.WriteLine($"{i + 1}. {cedulas[i]}");
+                Console.WriteLine("Usuario encontrado");
+                Console.WriteLine($"Cédula: {matrizUsuarios[0, i]}");
+                Console.WriteLine($"Nombre: {matrizUsuarios[1, i]}");
+                
+                Console.Write("Ingrese el nuevo nombre: ");
+                string nuevoNombre = Console.ReadLine();
+                
+                if (!string.IsNullOrWhiteSpace(nuevoNombre))
+                {
+                    matrizUsuarios[1, i] = nuevoNombre;
+                    Console.WriteLine("¡Usuario actualizado con éxito!");
+                }
+                else
+                {
+                    Console.WriteLine("El nombre no puede estar vacío. No se realizaron cambios.");
+                }
+                
+                usuarioEncontrado = true;
+                break;
             }
-
-            Console.Write("Seleccione un número (1 al {0}) o 0 para volver: ", cedulas.Count);
-            string input = Console.ReadLine();
-
-            if (int.TryParse(input, out int seleccion) && seleccion >= 0 && seleccion <= cedulas.Count)
-            {
-                if (seleccion == 0) return;
-
-                Console.WriteLine($"\nEditando usuario {seleccion}:");
-                Console.Write("Nuevo nombre: ");
-                nombres[seleccion - 1] = Console.ReadLine();
-                Console.Write("Nueva cédula: ");
-                cedulas[seleccion - 1] = Console.ReadLine();
-                Console.WriteLine("¡Usuario actualizado con éxito!");
-            }
-            else
-            {
-                Console.WriteLine("Ingrese una opción del menú válida.");
-            }
+        }
+        
+        if (!usuarioEncontrado)
+        {
+            Console.WriteLine("Usuario no encontrado");
         }
     }
 }

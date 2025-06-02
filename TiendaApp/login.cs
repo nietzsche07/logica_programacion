@@ -2,8 +2,10 @@ public class Login
 {
     public bool LoginUser()
     {
-        string usuarioPorDefecto = "admin";
-        string passwordPorDefecto = "admin123";
+        string[] credencialesPorDefecto = new string[2];
+        credencialesPorDefecto[0] = "admin";
+        credencialesPorDefecto[1] = "admin123"; 
+        
         string usuario;
         string password;
 
@@ -17,14 +19,16 @@ public class Login
             Console.Write("Ingrese contraseña: ");
             password = Console.ReadLine();
 
-            if (usuario == usuarioPorDefecto && password == passwordPorDefecto)
+            if (usuario == credencialesPorDefecto[0] && password == credencialesPorDefecto[1])
             {
                 Console.WriteLine("\n¡Bienvenido!");
+                Console.WriteLine("Accediendo al Menú Principal...\n");
                 return true;
             }
             else
             {
-                Console.WriteLine("\nUsuario o contraseña incorrectos. Intente de nuevo.\n");
+                Console.WriteLine("\nError de autenticación: Usuario o contraseña incorrectos.");
+                Console.WriteLine("Intente de nuevo.\n");
             }
         }
     }
